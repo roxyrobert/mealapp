@@ -1,0 +1,191 @@
+/* Body designing */
+body{
+    background-color: #A9A9A9;
+    color: #555555;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16;
+    line-height: 1.5em;
+    margin: 0;
+    background-image: url('images/food01.png');
+    background-repeat:no-repeat;
+}
+
+
+/* Header design */
+#main-header{
+    background-color: orange;
+    color: white;
+}
+
+/* Navigation design */
+#nav{
+    /* background-color: rgb(184, 134, 28); */
+    color: #fff;
+    background-color: orange;
+}
+#nav ul{
+    padding: 0%;
+    list-style: none;
+}
+#nav li{
+    display: inline;
+    padding-left: 10px;
+}
+#nav a{
+    font-size: 18px;
+    padding-right: 15px;
+    text-decoration: none;
+    color: white;
+}
+#nav a:hover{
+    color: rgb(34, 12, 4);
+}
+#nav a:active{
+    color: greenyellow;
+}
+
+/* Designing the Links (a-tags) */
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: orangered;
+}
+a:active{
+    color: greenyellow;
+}
+a:visited{
+    color: firebrick;
+}
+
+/* showcase view design */
+#showcase{
+    background-image: url('images/food1');
+    background-position: center-right;
+    min-height: 200px;
+    margin-bottom: 25px;
+}
+
+/* Rectangles to contain some data */
+.rect-1{
+    background-color: orange;
+    color: white;
+    border: 3px orange solid;
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.rect-1 h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+}
+.rect-2{
+    border: 2px dotted coral;
+    padding: 20px;
+    margin: 20px 0;
+}
+.clearfix {
+    overflow: auto;
+}
+.img1 {
+    float: right;
+}
+.img2 {
+    float: right;
+    width: 70%;
+    height: 90%;
+}
+
+/* Main container design */
+.my-container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Designing the Forms */
+.my-form{
+    padding: 20px;
+}
+.my-form .form-box{
+    padding-bottom: 15px;
+}
+.my-form label{
+    display: block;
+}
+.my-form input[type="text"]{
+    padding: 8px;
+    width: 90%;
+}
+.my-form input[type="password"]{
+    padding: 8px;
+    width: 90%;
+}
+
+/* Designing Lists */
+.topics{
+    border: 1px #ccc solid;
+    padding: 10px;
+}
+.topics ul{
+    padding: 0;
+    list-style: none;
+}
+
+/* Designing Buttons */
+.button{
+    background-color: #333;
+    color: wheat;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+.button:hover{
+    background: orangered;
+    color: whitesmoke;
+}
+
+/* Designing blocks of data */
+.block{
+    float: left;
+    width: auto;
+    border: 1px solid #ccc;
+}
+
+/* Designing the Footer */
+#main-footer{
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Designing Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: coral;
+    color: white;
+}
+h1, h3 {
+    text-align: center;
+}
+#reg-img {
+    float: right;
+}
+#reg-pg {
+    float: left;
+}
