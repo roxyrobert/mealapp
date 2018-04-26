@@ -7,7 +7,7 @@ app = Flask(__name__)
 users = []
 meals = []
 
-@app.route('/auth/user', methods=['POST'])
+@app.route('/auth/signup', methods=['POST'])
 def register_user():
     newuser_data = request.get_json()
 
@@ -28,7 +28,7 @@ def login():
 
             
 # Meals route for Admin only
-@app.route('/meals', methods =['GET'])
+@app.route('/get_meals', methods =['GET'])
 def get_meals():
     for user in users:
         if user['role'] == 'admin':
@@ -44,7 +44,7 @@ def get_meals():
 
 
 # Add meals; for only Admin
-@app.route('/meal', methods =['POST'])
+@app.route('/add_meal', methods =['POST'])
 #@is_user_admin
 def add_meal():
     for user in users:
@@ -56,17 +56,45 @@ def add_meal():
         return jsonify({'message':'You are not authorised'})
     
 
-
-
-@app.route('/meal/<int:meal_id>', methods =['GET'])
-def get_meal(meal_id):
-    return 'This returns one meal by ID'
-
-
-
-@app.route('/meal/<int:meal_id>', methods =['PUT'])
+@app.route('/edit_meal/<int:meal_id>', methods =['PUT'])
 def edit_meal(meal_id):
-    return 'This updates a meal by ID.'
+    for user in users:
+        if user['role'] == 'admin':
+            new_meal = request.get_json(id)
+            edited_meal = {'meal_name':new_meal['meal_name'], 'price':new_meal['price']}
+            return jsonify({'Meals': meals})
+        return jsonify({'message':'You are not authorised'})
+
+    
+
+
+
+@app.route('/delete_meal/<int:meal_id>', methods =['GET'])
+def delete_meal(meal_id):
+    return 'This deletes one meal by ID'
+
+
+@app.route('/set_menu', methods=['POST'])
+def set_menu():
+    return 'This sets up the menu'
+
+@app.route('/get_menu', methods=['GET'])
+def get_menu():
+    return 'This is the menu'
+
+@app.route('/order_meal', methods=['POST'])
+def order_meal():
+    return 'Make an order'
+
+@app.route('edit_order', methods=['PUT'])
+def edit_order():
+    return 'Modify your order'
+
+@app.route('get_orders', methods=[GET])
+def get_orders():
+    return 'Here you can view all orders'
+    
+
 
 @app.route('/meal/<int:meal_id>', methods =['DELETE'])
 def delete_meal(meal_id):
