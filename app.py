@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from functools import wraps
 
 app = Flask(__name__)
 
@@ -34,22 +35,34 @@ def get_meals():
             return jsonify({'message':'These are the available meals'})
     return jsonify({'message':'You are not authorised'})
 
+#check if user is admin
+#def is_user_admin(f):
+#   @wraps(f)
+#    def decorated(*args, **kwargs):
+#     auth = request.authorization
+#     if auth == is_ad
 
-@app.route('/meal/<int:meal_id>', methods =['GET'])
-def get_meal(meal_id):
-    return 'This returns one meal by ID'
 
 # Add meals; for only Admin
 @app.route('/meal', methods =['POST'])
+#@is_user_admin
 def add_meal():
     for user in users:
         if user['role'] == 'admin':
             add_meal = request.get_json()
             new_meal = {'id':add_meal['id'], 'meal_name':add_meal['meal_name'], 'price':add_meal['price']}
             meals.append(new_meal)
+            return jsonify({'Meals': meals})
         return jsonify({'message':'You are not authorised'})
+    
 
-    #return 'This adds a new meal'
+
+
+@app.route('/meal/<int:meal_id>', methods =['GET'])
+def get_meal(meal_id):
+    return 'This returns one meal by ID'
+
+
 
 @app.route('/meal/<int:meal_id>', methods =['PUT'])
 def edit_meal(meal_id):
