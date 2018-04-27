@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from functools import wraps
 
+
 app = Flask(__name__)
 
 
@@ -86,19 +87,19 @@ def get_menu():
 def order_meal():
     return 'Make an order'
 
-@app.route('edit_order', methods=['PUT'])
+@app.route('/edit_order', methods=['PUT'])
 def edit_order():
     return 'Modify your order'
 
-@app.route('get_orders', methods=[GET])
+@app.route('/get_orders', methods=['GET'])
 def get_orders():
     return 'Here you can view all orders'
     
 
-
+'''
 @app.route('/meal/<int:meal_id>', methods =['DELETE'])
 def delete_meal(meal_id):
     return 'This deletes a meal by ID.'
-
+'''
 if __name__ == '__main__':
     app.run(debug=True)
